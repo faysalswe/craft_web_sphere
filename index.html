@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Craft Web Sphere</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #4a90e2, #50e3c2);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      animation: slideUp 2s ease;
+    }
+
+    .button {
+      padding: 15px 30px;
+      font-size: 1rem;
+      color: #4a90e2;
+      background: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .features {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 50px;
+      animation: fadeIn 2s ease;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      width: 250px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .about {
+      margin-top: 50px;
+      padding: 20px;
+      text-align: left;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .contact {
+      margin-top: 50px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .contact input, .contact textarea, .contact button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact textarea {
+      resize: none;
+    }
+
+    .contact button {
+      background: #50e3c2;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact button:hover {
+      background: #4a90e2;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Welcome to Craft Web Sphere</h1>
+    <p class="subtitle">Building software solutions for small businesses and resorts</p>
+    <button class="button">Add Your Company</button>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Small Business Tools</h3>
+        <p>Customized software for efficiency.</p>
+      </div>
+      <div class="feature">
+        <h3>Resort Management</h3>
+        <p>Streamlined booking and management systems.</p>
+      </div>
+      <div class="feature">
+        <h3>Software Services</h3>
+        <p>Comprehensive support for your business.</p>
+      </div>
+    </div>
+
+    <div class="about">
+      <h2>About Us</h2>
+      <p>
+        At Craft Web Sphere, we specialize in crafting tailored software solutions for small businesses
+        and resorts. Our mission is to empower businesses with cutting-edge tools that simplify
+        operations and boost efficiency. From resort booking systems to comprehensive management tools,
+        we deliver solutions designed to meet your unique needs.
+      </p>
+    </div>
+
+    <div class="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Add a small animation to the button on click
+    const button = document.querySelector('.button');
+    button.addEventListener('click', () => {
+      button.style.transform = 'scale(1.2)';
+      setTimeout(() => {
+        button.style.transform = 'scale(1)';
+      }, 200);
+    });
+
+    // Add dynamic hover effect on features
+    const features = document.querySelectorAll('.feature');
+    features.forEach((feature) => {
+      feature.addEventListener('mouseover', () => {
+        feature.style.transform = 'scale(1.1) rotate(2deg)';
+      });
+      feature.addEventListener('mouseout', () => {
+        feature.style.transform = 'scale(1) rotate(0deg)';
+      });
+    });
+  </script>
+</body>
+</html>
