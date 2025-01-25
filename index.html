@@ -57,6 +57,7 @@
       flex-wrap: wrap;
       margin-top: 50px;
       animation: fadeIn 2s ease;
+      justify-content: center;
     }
 
     .feature {
@@ -136,6 +137,68 @@
       background: #4a90e2;
     }
 
+    @media (max-width: 768px) {
+      .title {
+        font-size: 2.5rem;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+      }
+
+      .features {
+        gap: 20px;
+      }
+
+      .feature {
+        width: 200px;
+      }
+
+      .about h2, .contact h2 {
+        font-size: 1.8rem;
+      }
+
+      .about p {
+        font-size: 0.9rem;
+      }
+
+      .button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .title {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      .features {
+        gap: 10px;
+      }
+
+      .feature {
+        width: 180px;
+      }
+
+      .about h2, .contact h2 {
+        font-size: 1.5rem;
+      }
+
+      .about p {
+        font-size: 0.8rem;
+      }
+
+      .button {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+      }
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -189,11 +252,20 @@
 
     <div class="contact">
       <h2>Contact Us</h2>
-      <p>craftwebsphere@gmail.com</p>
+      <p class="subtitle">craftwebsphere@gmail.com</p>
     </div>
   </div>
 
   <script>
+    // Add a small animation to the button on click
+    const button = document.querySelector('.button');
+    button.addEventListener('click', () => {
+      button.style.transform = 'scale(1.2)';
+      setTimeout(() => {
+        button.style.transform = 'scale(1)';
+      }, 200);
+    });
+
     // Add dynamic hover effect on features
     const features = document.querySelectorAll('.feature');
     features.forEach((feature) => {
